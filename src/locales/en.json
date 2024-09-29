@@ -1,0 +1,15 @@
+{
+    "titulo": "Adopt a Robot with Robot Lovers!",
+    "inicioSesion": "Log In",
+    "botonIngresar":"Log In",
+    "botonCancelar":"Cancel",
+    "mensajeError":"Authentication error. Check your credentials",
+    "nombreUsuario":"Username",
+    "clave":"Password",
+    "nombreRobot": "Name",
+    "modeloRobot": "Model",
+    "empresaFabricante": "Manufacturing Company",
+    "anioFabricacion":"Manufacturing Year",
+    "capacidadProcesamiento":"Processing Capacity",
+    "estadoHumor":"Mood"
+}

@@ -1,41 +1,19 @@
-import React, { useState } from 'react';
-import LoginForm from './LoginForm';
-import RobotsList from './RobotsList';
-import RobotDetail from './RobotDetail';
-import Header from './Header'; 
-import './LoginForm.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginForm from './components/LoginForm';  
+import RobotsList from './components/RobotsList'; 
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [selectedRobot, setSelectedRobot] = useState(null);
-
-  const handleLoginSuccess = () => {
-    setIsAuthenticated(true);
-  };
-
-  const handleRobotSelect = (robot) => {
-    setSelectedRobot(robot);
-  };
-
-  return (
-    <div className="App">
-      {!isAuthenticated ? (
-        <LoginForm onLoginSuccess={handleLoginSuccess} />
-      ) : (
-        <>
-          <Header /> 
-          <div className="row">
-            <div className="col-4">
-              <RobotsList onRobotSelect={handleRobotSelect} /> 
-            </div>
-            <div className="col-8">
-              <RobotDetail robot={selectedRobot} />
-            </div>
-          </div>
-        </>
-      )}
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<div><Header/><LoginForm/><Footer/></div>} />
+                <Route path="/robotslist" element={<div><Header/><RobotsList/><Footer/></div>} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
