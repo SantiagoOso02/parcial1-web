@@ -16,11 +16,11 @@ export const login = async (credentials) => {
   try {
     const response = await axios.post(`${BASE_URL}/login`, credentials);
     
-    // Asegúrate de que el status sea 200 y que tengamos éxito
+    
     if (response.status === 200 && response.data.status === "success") {
-      return response.data; // Login exitoso
+      return response.data;
     } else {
-      throw new Error('Credenciales incorrectas.'); // Este caso no debería ocurrir
+      throw new Error('Credenciales incorrectas.');
     }
 
   } catch (error) {
